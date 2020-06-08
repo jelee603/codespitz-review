@@ -1,6 +1,6 @@
 const Visitor = class {
     folder(task) { throw 'override'; }
-    parent(v, task) {throw 'override'; }
+    parent(v, task) {throw,}
     task(v, task) { throw 'override'; }
 }
 
@@ -27,7 +27,7 @@ const Renderer = class {
     }
     subTask(parent, list) {
         list.forEach(({task, list})=> {
-            cosnt v = this.visitor.task(parent, task);
+            const v = this.visitor.task(parent, task);
             this.subTask(this.visitor.parent(v, this), list);
         });
     }
