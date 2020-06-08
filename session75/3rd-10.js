@@ -1,6 +1,6 @@
 const Visitor = class {
     folder(task) { throw 'override'; }
-    parent(v, task) {throw,}
+    parent(v, task) {throw 'override';}
     task(v, task) { throw 'override'; }
 }
 
